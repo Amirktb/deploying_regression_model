@@ -1,8 +1,0 @@
-# ignote datasets
-*.csv
-
-#ignore __pycache__
-__pycache__/
-
-# ignore .tox
-.tox/
