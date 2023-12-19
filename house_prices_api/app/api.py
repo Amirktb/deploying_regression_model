@@ -42,7 +42,7 @@ async def predict(input_data: schemas.MultipleHauseDataInputs) -> Any:
     if results["errors"] is not None:
         logger.warning(f"Prediction validation error: {results.get('errors')}")
         raise HTTPException(status_code=400, detail=json.loads(results['errors']))
-    
+   
     logger.info(f"Prediction results: {results.get('predictions')}")
 
     return results

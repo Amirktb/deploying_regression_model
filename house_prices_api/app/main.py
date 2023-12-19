@@ -17,6 +17,7 @@ app = FastAPI(
 
 root_router = APIRouter()
 
+
 @root_router.get("/")
 def index(request: Request) -> Any:
     """Basic HTML Response."""
@@ -32,6 +33,7 @@ def index(request: Request) -> Any:
     )
 
     return HTMLResponse(content=body)
+
 
 app.include_router(api_router, prefix=settings.API_V1_STR)
 app.include_router(root_router)
