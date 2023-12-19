@@ -54,7 +54,7 @@ jobs:
       - run:
           name: Deploy to Railway App (You must set RAILWAY_TOKEN env var)
           command: |
-            cd house_prices_api/ && railway up --detach
+            cd house_prices_api/ && railway up --detach --service=literate-sneeze
 
   test_and_upload_regression_model:
     <<: *defaults
