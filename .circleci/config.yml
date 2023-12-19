@@ -5,7 +5,7 @@ orbs:
 defaults: &defaults
   docker:
     - image: cimg/python:3.11.1
-  working_directory: ~/
+  working_directory: ~/project
 
 prepare_venv: &prepare_venv
   run:
@@ -32,10 +32,10 @@ fetch_data: &fetch_data
 jobs:
   test_app:
     <<: *defaults
-    working_directory: ~/house-prices-api
+    working_directory: ~/project/house-prices-api
     steps:
       - checkout:
-          path: ~/
+          path: ~/project
       - *prepare_tox
       - run:
           name: Runnning app tests
@@ -46,7 +46,7 @@ jobs:
     <<: *defaults
     steps:
       - checkout:
-          path: ~/
+          path: ~/project
       - node/install:
           node-version: '16.13'
       - run: node --version
