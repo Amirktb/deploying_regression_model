@@ -8,7 +8,7 @@ from pydantic import AnyHttpUrl, BaseSettings
 
 
 class LoggingSettings(BaseSettings):
-    LOGGING_LEVEL: int = logging.INFO#logging level as type int
+    LOGGING_LEVEL: int = logging.INFO  # logging level as type int
 
 
 class Settings(BaseSettings):
@@ -20,7 +20,7 @@ class Settings(BaseSettings):
     BACKEND_CORS_ORIGINS: List[AnyHttpUrl] = [
         "http://localhost:3000",  # type: ignore
         "http://localhost:8000",  # type: ignore
-        "https://localhost:3000", # type: ignore
+        "https://localhost:3000",  # type: ignore
         "https://localhost:8000",  # type: ignore
     ]
 
@@ -28,7 +28,7 @@ class Settings(BaseSettings):
 
     class Config:
         case_sensitive = True
-       
+
 
 class InterceptHandler(logging.Handler):
     def emit(self, record: logging.LogRecord) -> None:  # pragma: no cover
