@@ -19,7 +19,7 @@ prepare_tox: &prepare_tox
   run:
     name: Install tox
     command: |
-      pip install --user tox
+      pip install --user tox==3.28.0
 
 fetch_data: &fetch_data
   run:
