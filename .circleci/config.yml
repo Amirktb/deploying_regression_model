@@ -92,7 +92,7 @@ jobs:
       - run:
           name: Build and run Dockerfile (see https://docs.railway.app/deploy/dockerfiles)
           command: |
-            cd ./ && railway up --detach
+            cd ./ && railway up --detach --service=literate-sneeze
 
   test_regression_model_py37:
     docker:
