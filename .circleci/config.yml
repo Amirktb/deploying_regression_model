@@ -77,7 +77,7 @@ jobs:
             tox -e publish_model
 
 
-  section_08_deploy_app_container_via_railway:
+  deploy_app_container_via_railway:
     <<: *defaults
     steps:
       - setup_remote_docker:
@@ -92,7 +92,7 @@ jobs:
       - run:
           name: Build and run Dockerfile (see https://docs.railway.app/deploy/dockerfiles)
           command: |
-            cd section-08-deploying-with-containers && railway up --detach
+            cd ./ && railway up --detach
 
   test_regression_model_py37:
     docker:
@@ -280,11 +280,11 @@ workflows:
       - test_and_upload_regression_model:
           <<: *tags_only
 
-      - section_08_deploy_app_container_via_railway:
+      - deploy_app_container_via_railway:
          filters:
            branches:
              only:
-               - master
+               - main
                - demo
 
 #  test-all:
