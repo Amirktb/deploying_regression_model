@@ -1,3 +1,3 @@
 # Deploying house prices regression model
 
-Production code to deploy a regression model to Railway app using CI/CD
+Docker deployment of a production ready regression model to Railway app using CI/CD
